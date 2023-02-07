@@ -16,9 +16,9 @@ async function HomePage() {
   const upcomingMovies = await tmdbUpcomingResponse.json();
 
   return (
-    <div className='my-4'>
+    <div className=''>
       <Banner movies={upcomingMovies.results} />
-      <div className='grid gap-16 grid-cols-fluid mx-8'>
+      <div className='grid gap-16 grid-cols-fluid mx-8 my-4'>
         {movieData?.results.map((movie: any) => (
           <Movie
             key={movie.id}

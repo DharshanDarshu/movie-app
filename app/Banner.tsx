@@ -9,12 +9,12 @@ function Banner({ movies }: Props) {
   // https://api.themoviedb.org/3/movie/upcoming?api_key=0626e14ba8271472944432665972b0be&language=ta&page=1
 
   const random = Math.floor(Math.random() * movies.length);
-  console.log(movies[0]);
+  console.log(movies[random]);
   return (
     <div>
       <Image
         src={`https://image.tmdb.org/t/p/original${movies[random].poster_path}`}
-        className='w-full h-[80vh]'
+        className='w-full h-[80vh] object-cover'
         width={600}
         height={600}
         priority
