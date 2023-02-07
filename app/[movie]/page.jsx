@@ -7,12 +7,12 @@ export async function generateStaticParams() {
   );
 
   const movieData = await tmdbResponse.json();
-  return movieData.results.map((movie: any) => ({
-    movie: movie.id.toString(),
+  return movieData.results.map((movie) => ({
+    movie: toString(movie.id),
   }));
 }
 
-async function MovieId({ params }: any) {
+async function MovieId({ params }) {
   const { movie } = params;
   const response = await fetch(
     `https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.TMDB_API_KEY}`,
