@@ -21,7 +21,7 @@ async function MovieId({ params }) {
 
   const movieData = await response.json();
   return (
-    <div>
+    <div className='mx-20 my-8'>
       <div>
         <h2 className='text-2xl'>{movieData.title}</h2>
         <h2 className='text-lg'>
@@ -33,7 +33,7 @@ async function MovieId({ params }) {
         </h2>
         <Image
           src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`}
-          className='my-12 w-full h-[80vw]'
+          className='my-12 w-full h-[80vw] object-contain'
           width={600}
           height={600}
           priority
