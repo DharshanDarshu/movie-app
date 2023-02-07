@@ -39,6 +39,14 @@ async function MovieId({ params }) {
         <h2 className='bg-green-600 inline-block my-2 py-2 px-4 rounded-md text-sm'>
           {movieData.status}
         </h2>
+        <Image
+          src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
+          className='my-12 w-full object-contain'
+          width={600}
+          height={600}
+          priority
+          alt={movieData.title}
+        />
         {movieVideoData?.results && (
           <div className='w-[87vw] h-[60vh] my-4'>
             <iframe
@@ -50,14 +58,6 @@ async function MovieId({ params }) {
               allowfullscreen></iframe>
           </div>
         )}
-        <Image
-          src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
-          className='my-12 w-full object-contain'
-          width={600}
-          height={600}
-          priority
-          alt={movieData.title}
-        />
       </div>
     </div>
   );
