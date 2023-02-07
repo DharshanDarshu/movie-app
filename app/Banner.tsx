@@ -13,7 +13,7 @@ function Banner({ movies }: Props) {
   return (
     <div>
       <Image
-        src={`https://image.tmdb.org/t/p/original${movies[random].poster_path}`}
+        src={`https://image.tmdb.org/t/p/original${movies[random].backdrop_path}`}
         className='w-full h-[80vh] object-cover'
         width={600}
         height={600}
