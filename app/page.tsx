@@ -7,12 +7,18 @@ async function HomePage() {
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`,
   );
 
+  const tmdbUpcomingResponse = await fetch(
+    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API_KEY}&language=ta&page=1`,
+  );
+
   const movieData = await tmdbResponse.json();
+
+  const upcomingMovies = await tmdbUpcomingResponse.json();
 
   return (
     <div className='my-4'>
-      <Banner />
-      <div className='grid gap-16 grid-cols-fluid'>
+      <Banner movies={upcomingMovies.results} />
+      <div className='grid gap-16 grid-cols-fluid mx-8'>
         {movieData?.results.map((movie: any) => (
           <Movie
             key={movie.id}
