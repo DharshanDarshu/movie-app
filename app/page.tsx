@@ -7,7 +7,6 @@ async function HomePage() {
   );
 
   const movieData = await tmdbResponse.json();
-  console.log(movieData);
 
   return (
     <main>

@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import Header from "./Header";
 
 export default function RootLayout({
   children,
@@ -8,7 +9,10 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className='mx-32 my-12'>{children}</body>
+      <body className=''>
+        <Header />
+        <main className='mx-20 '>{children}</main>
+      </body>
     </html>
   );
 }
