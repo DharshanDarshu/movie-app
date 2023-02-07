@@ -32,7 +32,7 @@ async function MovieId({ params }) {
           {movieData.status}
         </h2>
         <Image
-          src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
           className='my-12 w-full h-[80vw] object-contain'
           width={600}
           height={600}
