@@ -7,31 +7,16 @@ async function HomePage() {
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`,
   );
 
-  const movieData = await tmdbResponse.json();
-  //   const movieData = {
-  //     results: [
-  //       { title: "sdsada" },
-  //       { title: "sdasda" },
-  //       { title: "dsdsad" },
-  //       { title: "sdsada" },
-  //       { title: "sdasda" },
-  //       { title: "dsdsad" },
-  //       { title: "sdsada" },
-  //       { title: "sdasda" },
-  //       { title: "dsdsad" },
-  //       { title: "sdsada" },
-  //       { title: "sdasda" },
-  //       { title: "dsdsad" },
-  //     ],
-  //   };
-
+  const popularMovie = await tmdbResponse.json();
   return (
     <div className=''>
-      <Banner movies={movieData.results} />
-      <h1>Top Rated</h1>
+      <Banner movies={popularMovie.results} />
+      <h1 className='mx-8 text-xl font-bold mt-4'>
+        Top Rated
+      </h1>
 
       <div className='flex gap-4 mx-8 my-4 hidden-over'>
-        {movieData?.results.map((movie: any) => (
+        {popularMovie?.results.map((movie: any) => (
           <Movie
             key={movie.id}
             id={movie.id}

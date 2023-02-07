@@ -33,7 +33,7 @@ async function MovieId({ params }) {
         </h2>
         <Image
           src={`https://image.tmdb.org/t/p/original${movieData.poster_path}`}
-          className='my-12 w-full'
+          className='my-12 w-full h-[80vw]'
           width={600}
           height={600}
           priority
