@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "../../Movie";
+import Movie from "./Movie";
 
 async function SearchPage({ params }: any) {
   const { term } = params;

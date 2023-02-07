@@ -7,18 +7,30 @@ async function HomePage() {
     `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.TMDB_API_KEY}`,
   );
 
-  const tmdbUpcomingResponse = await fetch(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.TMDB_API_KEY}&language=ta&page=1`,
-  );
-
   const movieData = await tmdbResponse.json();
-
-  const upcomingMovies = await tmdbUpcomingResponse.json();
+  //   const movieData = {
+  //     results: [
+  //       { title: "sdsada" },
+  //       { title: "sdasda" },
+  //       { title: "dsdsad" },
+  //       { title: "sdsada" },
+  //       { title: "sdasda" },
+  //       { title: "dsdsad" },
+  //       { title: "sdsada" },
+  //       { title: "sdasda" },
+  //       { title: "dsdsad" },
+  //       { title: "sdsada" },
+  //       { title: "sdasda" },
+  //       { title: "dsdsad" },
+  //     ],
+  //   };
 
   return (
     <div className=''>
-      <Banner movies={upcomingMovies.results} />
-      <div className='grid gap-16 grid-cols-fluid mx-8 my-4'>
+      <Banner movies={movieData.results} />
+      <h1>Top Rated</h1>
+
+      <div className='flex gap-4 mx-8 my-4 hidden-over'>
         {movieData?.results.map((movie: any) => (
           <Movie
             key={movie.id}

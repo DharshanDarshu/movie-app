@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 type Props = {
   title: string;
@@ -17,15 +18,17 @@ function Movie({
   return (
     <>
       {posterPath && (
-        <div className='border'>
+        <div>
           <Link href={`/${id}`}>
             <Image
               src={`https://image.tmdb.org/t/p/original${posterPath}`}
-              width={250}
-              height={350}
+              width={800}
+              height={800}
               alt={title}
             />
           </Link>
+          <h1>{title}</h1>
+          <h2>{releaseDate}</h2>
         </div>
       )}
     </>
