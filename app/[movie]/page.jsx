@@ -28,8 +28,6 @@ async function MovieId({ params }) {
 
   const movieVideoData = await videoRes.json();
 
-  console.log(movieVideoData.results.length);
-
   return (
     <div className='m-4 md:mx-20 md:my-8'>
       <div>
