@@ -18,7 +18,7 @@ async function SearchPage({ params }: any) {
           <Movie
             key={movie.id}
             id={movie.id}
-            posterPath={movie.backdrop_path}
+            posterPath={movie.poster_path}
             releaseDate={movie.release_date}
             title={movie.title}
           />

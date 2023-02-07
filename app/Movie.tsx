@@ -17,8 +17,6 @@ function Movie({
 }: Props) {
   return (
     <div>
-      <h1>{title}</h1>
-      <h2>{releaseDate}</h2>
       <Link href={`/${id}`}>
         <Image
           src={`https://image.tmdb.org/t/p/original${posterPath}`}
@@ -27,6 +25,8 @@ function Movie({
           alt={title}
         />
       </Link>
+      <h1>{title}</h1>
+      <h2>{releaseDate}</h2>
     </div>
   );
 }
