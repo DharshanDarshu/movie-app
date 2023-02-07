@@ -27,7 +27,6 @@ async function MovieId({ params }) {
   );
 
   const movieVideoData = await videoRes.json();
-  console.log("hi", movieVideoData.results[0].key);
 
   return (
     <div className='m-4 md:mx-20 md:my-8'>
@@ -40,15 +39,17 @@ async function MovieId({ params }) {
         <h2 className='bg-green-600 inline-block my-2 py-2 px-4 rounded-md text-sm'>
           {movieData.status}
         </h2>
-        <div className='w-[87vw] h-[60vh] my-4'>
-          <iframe
-            className='w-full h-full'
-            src={`https://www.youtube.com/embed/${movieVideoData?.results[0]?.key}`}
-            title='Why React.js is taking a new direction'
-            frameborder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-            allowfullscreen></iframe>
-        </div>
+        {movieVideoData?.results && (
+          <div className='w-[87vw] h-[60vh] my-4'>
+            <iframe
+              className='w-full h-full'
+              src={`https://www.youtube.com/embed/${movieVideoData?.results[0]?.key}`}
+              title='Why React.js is taking a new direction'
+              frameborder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              allowfullscreen></iframe>
+          </div>
+        )}
         <Image
           src={`https://image.tmdb.org/t/p/original${movieData.backdrop_path}`}
           className='my-12 w-full object-contain'
