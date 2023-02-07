@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "./Banner";
 import Movie from "./Movie";
+import Movies from "./Movies";
 
 async function HomePage() {
   const tmdbResponse = await fetch(
@@ -31,6 +32,10 @@ async function HomePage() {
           />
         ))}
       </div>
+      <Movies
+        movies={popularMovie}
+        category='popular'
+      />
     </div>
   );
 }
