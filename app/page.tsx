@@ -1,4 +1,5 @@
 import React from "react";
+import Banner from "./Banner";
 import Movie from "./Movie";
 
 async function HomePage() {
@@ -9,8 +10,8 @@ async function HomePage() {
   const movieData = await tmdbResponse.json();
 
   return (
-    <main>
-      <h1></h1>
+    <div className='my-4'>
+      <Banner />
       <div className='grid gap-16 grid-cols-fluid'>
         {movieData?.results.map((movie: any) => (
           <Movie
@@ -22,7 +23,7 @@ async function HomePage() {
           />
         ))}
       </div>
-    </main>
+    </div>
   );
 }
 
