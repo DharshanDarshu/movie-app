@@ -8,15 +8,20 @@ async function HomePage() {
   );
 
   const popularMovie = await tmdbResponse.json();
+  const trendingResponse = await fetch(
+    `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.TMDB_API_KEY}`,
+  );
+
+  const trendingMovie = await trendingResponse.json();
   return (
     <div className=''>
-      <Banner movies={popularMovie.results} />
+      <Banner movies={trendingMovie.results} />
       <h1 className='mx-8 text-xl font-bold mt-4'>
         Top Rated
       </h1>
 
       <div className='flex gap-4 mx-8 my-4 hidden-over'>
-        {popularMovie?.results.map((movie: any) => (
+        {trendingMovie?.results.map((movie: any) => (
           <Movie
             key={movie.id}
             id={movie.id}

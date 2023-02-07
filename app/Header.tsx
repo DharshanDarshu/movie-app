@@ -10,8 +10,8 @@ function Header() {
         <h1>Zensar Movie</h1>
       </Link>
       <Search />
-      <p>Sign In</p>
-      <p>Sign Up</p>
+      <p className='hidden md:inline-block'>Sign In</p>
+      <p className='hidden md:inline-block'>Sign Up</p>
       <p>Profile</p>
     </header>
   );

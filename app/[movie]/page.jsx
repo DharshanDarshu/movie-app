@@ -21,7 +21,7 @@ async function MovieId({ params }) {
 
   const movieData = await response.json();
   return (
-    <div className='mx-20 my-8'>
+    <div className='m-4 md:mx-20 md:my-8'>
       <div>
         <h2 className='text-2xl'>{movieData.title}</h2>
         <h2 className='text-lg'>
