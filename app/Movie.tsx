@@ -16,18 +16,22 @@ function Movie({
   id,
 }: Props) {
   return (
-    <div>
-      <Link href={`/${id}`}>
-        <Image
-          src={`https://image.tmdb.org/t/p/original${posterPath}`}
-          width={800}
-          height={800}
-          alt={title}
-        />
-      </Link>
-      <h1>{title}</h1>
-      <h2>{releaseDate}</h2>
-    </div>
+    <>
+      {posterPath && (
+        <div>
+          <Link href={`/${id}`}>
+            <Image
+              src={`https://image.tmdb.org/t/p/original${posterPath}`}
+              width={800}
+              height={800}
+              alt={title}
+            />
+          </Link>
+          <h1>{title}</h1>
+          <h2>{releaseDate}</h2>
+        </div>
+      )}
+    </>
   );
 }
 
