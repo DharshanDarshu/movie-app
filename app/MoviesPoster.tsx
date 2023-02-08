@@ -31,7 +31,7 @@ function MoviesPoster({ movies, category }: Props) {
   };
   return (
     <div>
-      <h1 className='mx-8 text-xl font-bold mt-0 md:mt-4'>
+      <h1 className='mx-8 text-xl font-bold mt-2 md:mt-4'>
         Trending
       </h1>
 

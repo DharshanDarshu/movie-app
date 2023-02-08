@@ -19,7 +19,7 @@ function MovieBackDrop({
       {posterPath && (
         <div className='md:border-x-8 border-white'>
           <Link href={`/${id}`}>
-            <div className='w-[350px] h-[200px]'>
+            <div className='w-[350px] h-[200px] hover:scale-[1.02] transition-all duration-300 ease-out'>
               <Image
                 src={`https://image.tmdb.org/t/p/original${posterPath}`}
                 width={250}

@@ -11,9 +11,11 @@ async function SearchPage({ params }: any) {
   const movieData = await searchResponse.json();
 
   return (
-    <div>
-      <h1 className='my-4'>Search Term: {term}</h1>
-      <div className='grid gap-16 grid-cols-fluid my-4'>
+    <div className='mx-8'>
+      <h1 className='my-4 text-lg font-bold capitalize'>
+        Search Term: {term}
+      </h1>
+      <div className='grid gap-4 grid-cols-fluid my-4'>
         {movieData?.results.map((movie: any) => (
           <Movie
             key={movie.id}
