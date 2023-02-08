@@ -18,7 +18,7 @@ function Movie({
   return (
     <>
       {posterPath && (
-        <div>
+        <div className='relative'>
           <Link
             href={`/${id}`}
             className='hover:scale-[1.02] transition-all duration-300 ease-out'>
@@ -27,9 +27,12 @@ function Movie({
               width={800}
               height={800}
               alt={title}
+              className='bg-black/10'
             />
           </Link>
-          <h1>{title}</h1>
+          <h1 className='absolute top-1/2 left-1/2 hidden hover:inline-block'>
+            {title}
+          </h1>
           <h2>{releaseDate}</h2>
         </div>
       )}

@@ -48,7 +48,7 @@ async function MovieId({ params }) {
           alt={movieData.title}
         />
         {movieVideoData?.results && (
-          <div className='w-[87vw] h-[60vh] my-4'>
+          <div className='md:w-[87vw] md:h-[60vh] my-4'>
             <iframe
               className='w-full h-full'
               src={`https://www.youtube.com/embed/${movieVideoData?.results[0]?.key}`}
