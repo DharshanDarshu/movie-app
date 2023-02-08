@@ -8,7 +8,7 @@ function Banner({ movies }: Props) {
   return (
     <div>
       <Image
-        src={`https://image.tmdb.org/t/p/original${movies[12].backdrop_path}`}
+        src={`https://image.tmdb.org/t/p/original${movies[11].backdrop_path}`}
         className='hidden md:inline-block w-full h-[80vh] object-cover'
         width={600}
         height={600}
