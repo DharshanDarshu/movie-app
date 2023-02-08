@@ -2,23 +2,23 @@
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import MovieBackDrop from "./MovieBackDrop";
+import Movie from "./Movie";
 
 type Props = {
   movies: any;
   category: string;
 };
 
-function Movies({ movies, category }: Props) {
+function MoviesPoster({ movies, category }: Props) {
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 6,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 4,
+      items: 5,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -31,10 +31,11 @@ function Movies({ movies, category }: Props) {
   };
   return (
     <div>
-      <h1 className='mx-8 text-xl font-bold mt-4 capitalize'>
-        {category}
+      <h1 className='mx-8 text-xl font-bold mt-0 md:mt-4'>
+        Trending
       </h1>
-      <div className='mx-8 my-4 transition-all duration-150 ease-in-out'>
+
+      <div className='gap-4 mx-8 my-4 hidden-over'>
         <Carousel
           responsive={responsive}
           autoPlaySpeed={2000}
@@ -47,10 +48,10 @@ function Movies({ movies, category }: Props) {
           dotListClass='custom-dot-list-style'
           itemClass='carousel-item-padding-40-px'>
           {movies?.results.map((movie: any) => (
-            <MovieBackDrop
+            <Movie
               key={movie.id}
               id={movie.id}
-              posterPath={movie.backdrop_path}
+              posterPath={movie.poster_path}
               releaseDate={movie.release_date}
               title={movie.title}
             />
@@ -61,4 +62,4 @@ function Movies({ movies, category }: Props) {
   );
 }
 
-export default Movies;
+export default MoviesPoster;

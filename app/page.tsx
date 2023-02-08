@@ -2,6 +2,7 @@ import React from "react";
 import Banner from "./Banner";
 import Movie from "./Movie";
 import Movies from "./Movies";
+import MoviesPoster from "./MoviesPoster";
 
 async function HomePage() {
   const tmdbResponse = await fetch(
@@ -22,21 +23,10 @@ async function HomePage() {
   return (
     <div className=''>
       <Banner movies={trendingMovie.results} />
-      <h1 className='mx-8 text-xl font-bold mt-4'>
-        Trending
-      </h1>
-
-      <div className='flex gap-4 mx-8 my-4 hidden-over'>
-        {trendingMovie?.results.map((movie: any) => (
-          <Movie
-            key={movie.id}
-            id={movie.id}
-            posterPath={movie.poster_path}
-            releaseDate={movie.release_date}
-            title={movie.title}
-          />
-        ))}
-      </div>
+      <MoviesPoster
+        movies={trendingMovie}
+        category='Trending'
+      />
       <Movies
         movies={topRatedMovie}
         category='top rated'

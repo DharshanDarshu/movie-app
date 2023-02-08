@@ -17,7 +17,7 @@ function MovieBackDrop({
   return (
     <>
       {posterPath && (
-        <div className='border-x-8 border-white'>
+        <div className='md:border-x-8 border-white'>
           <Link href={`/${id}`}>
             <div className='w-[350px] h-[200px]'>
               <Image

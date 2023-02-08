@@ -14,7 +14,15 @@ function Banner({ movies }: Props) {
     <div>
       <Image
         src={`https://image.tmdb.org/t/p/original${movies[random].backdrop_path}`}
-        className='w-full h-[80vh] object-cover'
+        className='hidden md:inline-block w-full h-[80vh] object-cover'
+        width={600}
+        height={600}
+        priority
+        alt={movies[random].title}
+      />
+      <Image
+        src={`https://image.tmdb.org/t/p/original${movies[random].poster_path}`}
+        className='inline-block md:hidden w-full h-[80vh] object-cover'
         width={600}
         height={600}
         priority

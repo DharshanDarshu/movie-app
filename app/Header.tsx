@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function Header() {
   return (
-    <header className='sticky top-0 flex items-center justify-between space-x-4 bg-gray-800 text-white p-4 shadow-md'>
+    <header className='sticky top-0 z-50 flex items-center justify-between space-x-4 bg-gray-800 text-white p-4 shadow-md'>
       <Link
         href='/'
         className='cursor-pointer'>

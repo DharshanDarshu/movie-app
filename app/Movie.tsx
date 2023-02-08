@@ -17,9 +17,9 @@ function Movie({
   return (
     <>
       {posterPath && (
-        <div className='border'>
+        <div className='border-x-4 border-white'>
           <Link href={`/${id}`}>
-            <div className='w-[250px] h-[350px]'>
+            <div className='w-full md:w-[250px] h-full md:h-[350px]'>
               <Image
                 src={`https://image.tmdb.org/t/p/original${posterPath}`}
                 width={250}
