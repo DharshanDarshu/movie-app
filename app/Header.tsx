@@ -8,9 +8,9 @@ function Header() {
       <Link
         href='/'
         className='cursor-pointer'>
-        <div className='w-[80px] h-[40px]'>
+        <div className='w-[80px] h-[50px]'>
           <Image
-            src='https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/iglvru0hrrhdhq54flql'
+            src='https://www.99corporates.com/CompanyLogo/U72900PN2018PLC174305.png'
             width={100}
             height={50}
             alt='zensar logo'

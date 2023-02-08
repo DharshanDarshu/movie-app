@@ -8,7 +8,7 @@ module.exports = {
     domains: [
       "image.tmdb.org",
       "cdn.pixabay.com",
-      "res.cloudinary.com",
+      "www.99corporates.com",
     ],
   },
 };
