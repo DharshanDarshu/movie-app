@@ -7,6 +7,7 @@ module.exports = {
   ],
   theme: {
     extend: {
+      display: ["group-hover"],
       gridTemplateColumns: {
         fluid: "repeat(auto-fit, minmax(15rem, 1fr))",
       },
