@@ -18,7 +18,7 @@ function Movie({
   return (
     <>
       {posterPath && (
-        <div className='relative group text-white'>
+        <div className='relative group text-white cursor-pointer'>
           <div className='relative group-hover:scale-[1.02] transition-all duration-300 ease-out'>
             <Link href={`/${id}`}>
               <Image
@@ -29,14 +29,12 @@ function Movie({
                 className=''
               />
             </Link>
-            <div className='hidden w-full h-full bg-black/60 hover:inline-block'></div>
+            <div className='absolute top-0 w-full h-full bg-transparent group-hover:bg-black/80'></div>
           </div>
-          <h1 className='absolute top-1/3 left-1/3 hidden group-hover:inline-block z-50'>
-            {title}
-          </h1>
-          <h2 className='absolute top-1/2 left-1/2 hidden group-hover:inline-block z-50'>
-            {releaseDate}
-          </h2>
+          <div className='absolute top-[25%] mx-4 hidden group-hover:inline-block z-50'>
+            <h1 className=''>{title}</h1>
+            <h2 className=''>{releaseDate}</h2>
+          </div>
         </div>
       )}
     </>
