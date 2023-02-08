@@ -19,21 +19,23 @@ function Movie({
     <>
       {posterPath && (
         <div className='relative'>
-          <Link
-            href={`/${id}`}
-            className='hover:scale-[1.02] transition-all duration-300 ease-out'>
-            <Image
-              src={`https://image.tmdb.org/t/p/original${posterPath}`}
-              width={800}
-              height={800}
-              alt={title}
-              className='bg-black/10'
-            />
-          </Link>
-          <h1 className='absolute top-1/2 left-1/2 hidden hover:inline-block'>
+          <div className='hover:scale-[1.02] transition-all duration-300 ease-out'>
+            <Link href={`/${id}`}>
+              <Image
+                src={`https://image.tmdb.org/t/p/original${posterPath}`}
+                width={800}
+                height={800}
+                alt={title}
+                className='hover:opacity-40'
+              />
+            </Link>
+          </div>
+          <h1 className='absolute top-1/2 left-1/2 hidden hover:inline-block z-50'>
             {title}
           </h1>
-          <h2>{releaseDate}</h2>
+          <h2 className='absolute top-1/2 left-1/2 hidden hover:inline-block z-50'>
+            {releaseDate}
+          </h2>
         </div>
       )}
     </>
