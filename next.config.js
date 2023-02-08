@@ -5,6 +5,10 @@ module.exports = {
     appDir: true,
   },
   images: {
-    domains: ["image.tmdb.org", "cdn.pixabay.com"],
+    domains: [
+      "image.tmdb.org",
+      "cdn.pixabay.com",
+      "res.cloudinary.com",
+    ],
   },
 };
