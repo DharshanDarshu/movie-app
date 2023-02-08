@@ -28,8 +28,8 @@ function Movie({
                 alt={title}
                 className=''
               />
+              <div className='absolute top-0 w-full h-full bg-transparent group-hover:bg-black/60'></div>
             </Link>
-            <div className='absolute top-0 w-full h-full bg-transparent group-hover:bg-black/80'></div>
           </div>
           <div className='absolute top-[25%] mx-4 hidden group-hover:inline-block z-50'>
             <h1 className=''>{title}</h1>
