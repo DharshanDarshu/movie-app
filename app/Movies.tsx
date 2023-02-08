@@ -1,7 +1,8 @@
 "use client";
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import MovieBackDrop from "./MovieBackDrop";
-import Carousel from "react-grid-carousel";
 
 type Props = {
   movies: any;
@@ -9,50 +10,41 @@ type Props = {
 };
 
 function Movies({ movies, category }: Props) {
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        },
-      },
-    ],
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   };
   return (
     <div>
       <h1 className='mx-8 text-xl font-bold mt-4 capitalize'>
         {category}
       </h1>
-      <div className='flex gap-4 mx-8 my-4 hidden-over'>
+      <div className='flex mx-8 my-4'>
         <Carousel
-          cols={5}
-          showDots
-          loop>
+          responsive={responsive}
+          infinite={true}
+          autoPlaySpeed={1000}
+          keyBoardControl={true}
+          customTransition='all .5'
+          transitionDuration={500}
+          containerClass='carousel-container'
+          removeArrowOnDeviceType={["tablet", "mobile"]}
+          itemClass='carousel-item-padding-40-px'>
           {movies?.results.map((movie: any) => (
             <MovieBackDrop
               key={movie.id}
