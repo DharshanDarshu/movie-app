@@ -16,7 +16,7 @@ function Banner({ movies }: Props) {
         alt={movies[12].title}
       />
       <Image
-        src={`https://image.tmdb.org/t/p/original${movies[10].poster_path}`}
+        src={`https://image.tmdb.org/t/p/original${movies[9].poster_path}`}
         className='inline-block md:hidden w-full h-[80vh] object-cover'
         width={600}
         height={600}
