@@ -30,11 +30,11 @@ function Movies({ movies, category }: Props) {
     },
   };
   return (
-    <div>
-      <h1 className='mx-8 text-xl font-bold mt-4 capitalize'>
+    <div className='mx-2 md:mx-8'>
+      <h1 className='text-xl font-bold mt-4 capitalize'>
         {category}
       </h1>
-      <div className='mx-8 my-4 transition-all duration-150 ease-in-out'>
+      <div className='my-4 transition-all duration-150 ease-in-out'>
         <Carousel
           responsive={responsive}
           autoPlaySpeed={2000}

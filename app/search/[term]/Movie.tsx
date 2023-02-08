@@ -26,7 +26,7 @@ function Movie({
                 width={800}
                 height={800}
                 alt={title}
-                className='hover:opacity-40'
+                className='hover:opacity-70'
               />
             </Link>
           </div>

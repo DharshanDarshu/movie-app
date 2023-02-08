@@ -30,12 +30,12 @@ function MoviesPoster({ movies, category }: Props) {
     },
   };
   return (
-    <div>
-      <h1 className='mx-8 text-xl font-bold mt-2 md:mt-4'>
+    <div className='mx-2 md:mx-8'>
+      <h1 className='text-xl font-bold mt-2 md:mt-4'>
         Trending
       </h1>
 
-      <div className='gap-4 mx-8 my-4 hidden-over'>
+      <div className='gap-4 my-4 hidden-over'>
         <Carousel
           responsive={responsive}
           autoPlaySpeed={2000}
