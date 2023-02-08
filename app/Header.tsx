@@ -8,7 +8,7 @@ function Header() {
       <Link
         href='/'
         className='cursor-pointer'>
-        <div className='w-[80px] h-[40px]'>
+        <div className='w-[80px] h-[30px]'>
           <Image
             src='https://www.99corporates.com/CompanyLogo/U72900PN2018PLC174305.png'
             width={100}
