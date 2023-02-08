@@ -19,7 +19,9 @@ function Movie({
     <>
       {posterPath && (
         <div>
-          <Link href={`/${id}`}>
+          <Link
+            href={`/${id}`}
+            className='hover:scale-[1.02] transition-all duration-300 ease-out'>
             <Image
               src={`https://image.tmdb.org/t/p/original${posterPath}`}
               width={800}

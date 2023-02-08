@@ -15,7 +15,7 @@ async function SearchPage({ params }: any) {
       <h1 className='my-4 text-lg font-bold capitalize'>
         Search Term: {term}
       </h1>
-      <div className='grid gap-4 grid-cols-fluid my-4'>
+      <div className='grid gap-2 grid-cols-fluid my-4'>
         {movieData?.results.map((movie: any) => (
           <Movie
             key={movie.id}
